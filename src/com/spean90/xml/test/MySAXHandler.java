@@ -1,4 +1,4 @@
-package com.spean90.xml;
+package com.spean90.xml.test;
 
 import java.util.ArrayList;
 import java.util.List;

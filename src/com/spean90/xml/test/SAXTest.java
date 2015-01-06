@@ -1,4 +1,4 @@
-package com.spean90.xml;
+package com.spean90.xml.test;
 
 import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
