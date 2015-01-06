@@ -75,7 +75,7 @@ public class DOMTest {
 			Transformer tf = tff.newTransformer();
 			//设置输出格式换行
 			tf.setOutputProperty(OutputKeys.INDENT, "yes");
-			tf.transform(new DOMSource(document), new StreamResult(new File("cfg/company1.xml")));
+			tf.transform(new DOMSource(document), new StreamResult(new File("cfg/company_dom.xml")));
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
