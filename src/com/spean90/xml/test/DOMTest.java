@@ -75,7 +75,7 @@ public class DOMTest {
 			Transformer tf = tff.newTransformer();
 			//设置输出格式换行
 			tf.setOutputProperty(OutputKeys.INDENT, "yes");
-			tf.transform(new DOMSource(document), new StreamResult(new File("cfg/company_dom.xml")));
+			tf.transform(new DOMSource(document), new StreamResult(new File("cfg/xml/company_dom.xml")));
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -113,7 +113,7 @@ public class DOMTest {
 		Document doc = null;
 		try {
 			db = dbf.newDocumentBuilder();
-			doc = db.parse("cfg/company.xml");
+			doc = db.parse("cfg/xml/company.xml");
 			NodeList nodeList = doc.getElementsByTagName("department");
 			System.out.println("一共有 "+nodeList.getLength()+" 个部门");
 			for (int i = 0; i < nodeList.getLength(); i++) {

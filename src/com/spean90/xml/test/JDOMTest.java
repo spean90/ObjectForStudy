@@ -24,7 +24,7 @@ public class JDOMTest {
 		SAXBuilder saxBuilder = new SAXBuilder();
 		Document document = null;
 		try {
-			document = saxBuilder.build("cfg/company.xml");
+			document = saxBuilder.build("cfg/xml/company.xml");
 			Company company = jdomTest.parseXml(document);
 			System.out.println(">>>>>>>>>>>>>>>");
 			System.out.println(company.getDepartments().size());
@@ -64,7 +64,7 @@ public class JDOMTest {
 		});
 		xmlOutputter.setFormat(format);
 		try {
-			xmlOutputter.output(document, new FileOutputStream(new File("cfg/company_jdom.xml")));
+			xmlOutputter.output(document, new FileOutputStream(new File("cfg/xml/company_jdom.xml")));
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

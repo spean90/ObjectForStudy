@@ -24,7 +24,7 @@ public class DOM4JTest {
 		DOM4JTest dom4jTest = new DOM4JTest();
 		SAXReader saxReader = new SAXReader();
 		try {
-			Document document = saxReader.read("cfg/company.xml");
+			Document document = saxReader.read("cfg/xml/company.xml");
 			Company company = dom4jTest.parseDocument(document);
 			System.out.println(company.getDepartments().size());
 			System.out.println(company.getDepartments().get(0).getName());
@@ -55,7 +55,7 @@ public class DOM4JTest {
 		OutputFormat format = OutputFormat.createPrettyPrint();
 		//设置xml的encoding属性；
 		//format.setEncoding("GBK");
-		File f = new File("cfg/company_dom4j.xml");
+		File f = new File("cfg/xml/company_dom4j.xml");
 		FileOutputStream fout = null;
 		XMLWriter writer = null;
 		try {

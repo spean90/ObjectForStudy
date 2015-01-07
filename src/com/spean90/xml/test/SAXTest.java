@@ -35,7 +35,7 @@ public class SAXTest {
 		try {
 			SAXParser saxParser = saxParserFactory.newSAXParser();
 			MySAXHandler mySAXHandler = new MySAXHandler();
-			saxParser.parse("cfg/company.xml",mySAXHandler);
+			saxParser.parse("cfg/xml/company.xml",mySAXHandler);
 			company = mySAXHandler.getCompany();
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -56,7 +56,7 @@ public class SAXTest {
 			tf.setOutputProperty(OutputKeys.ENCODING, "UTF-8");
 			tf.setOutputProperty(OutputKeys.INDENT, "yes");
 			//5.创建result对象
-			File f = new File("cfg/company_sax.xml");
+			File f = new File("cfg/xml/company_sax.xml");
 			if (!f.exists()) {
 				f.createNewFile();
 			}
