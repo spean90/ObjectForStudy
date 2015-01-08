@@ -54,7 +54,7 @@
     
 	<root level="DEBUG">
 		<appender-ref ref="STDOUT" />
-		<appender-ref ref="RollingFile" />
+		<!-- <appender-ref ref="RollingFile" /> -->
 	</root>
 
 </configuration>
