@@ -11,10 +11,18 @@ public class DaoTest {
 
 	
 	
-	@Test
+	//@Test
 	public void testUserInfoDaoList() {
 		UserInfoDao userInfoDao = new UserInfoDao();
 		List<UserInfo> list = userInfoDao.getUserInfoList();
 		System.out.println(list.size());
+	}
+	
+	@Test
+	public void testSaveUserInfo() {
+		UserInfoDao userInfoDao = new UserInfoDao();
+		UserInfo userInfo = new UserInfo();
+		userInfo.setAccount("abc");
+		System.out.println(userInfoDao.saveUserInfo(userInfo));
 	}
 }

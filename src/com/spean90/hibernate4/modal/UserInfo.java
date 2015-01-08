@@ -8,6 +8,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Transient;
+import javax.transaction.TransactionScoped;
 
 
 @Entity
@@ -32,6 +34,7 @@ public class UserInfo implements Serializable {
 	private Integer roleId;
 	@Column(name="add_man")
 	private String addMan;
+	@Transient
 	private String roleName;
 	
 	public String getRoleName() {
