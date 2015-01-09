@@ -28,8 +28,9 @@ public class TestExcelUtil {
 		headMap.put("time", "时  间");
 		headMap.put("name", "名 称");
 		headMap.put("account", "账  号");
+		String path = "cfg/poi";
 		try {
-			ExcelUtil.createExcelByList(list, "test.xls",headMap);
+			ExcelUtil.createExcelByList(list, "test.xls",headMap,path);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
