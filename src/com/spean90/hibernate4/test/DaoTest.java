@@ -22,7 +22,9 @@ public class DaoTest {
 		System.out.println(list.size());
 	}
 	
-	@Test
+	
+	
+	//@Test
 	public void testSaveUserInfo() {
 		logger.info("in...testDao...");
 		UserInfoDao userInfoDao = new UserInfoDao();
@@ -31,4 +33,22 @@ public class DaoTest {
 		System.out.println(userInfoDao.saveUserInfo(userInfo));
 		
 	}
+	
+	//@Test
+	public void testUpdate() {
+		UserInfoDao userInfoDao = new UserInfoDao();
+		UserInfo userInfo = new UserInfo();
+		userInfo.setUid(1);;
+		userInfoDao.updateUserInfo(userInfo);
+	}
+	@Test
+	public void testQuery() {
+		UserInfoDao userInfoDao = new UserInfoDao();
+		UserInfo userInfo = new UserInfo();
+		List<UserInfo> list = userInfoDao.getUserInfoByParam(userInfo);
+		System.out.println("size:"+list.size());
+		System.out.println("id:"+list.get(0).getUid());
+	}
+	
+	
 }
