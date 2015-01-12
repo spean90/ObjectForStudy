@@ -14,7 +14,7 @@ public class DaoTest {
 	Logger logger = LoggerFactory.getLogger(DaoTest.class);
 	
 	
-	//@Test
+	@Test
 	public void testUserInfoDaoList() {
 		logger.info("in...testDao...");
 		UserInfoDao userInfoDao = new UserInfoDao();
@@ -48,6 +48,9 @@ public class DaoTest {
 		List<UserInfo> list = userInfoDao.getUserInfoByParam(userInfo);
 		System.out.println("size:"+list.size());
 		System.out.println("id:"+list.get(0).getUid());
+		List<UserInfo> list2 = userInfoDao.getUserInfoByParam(userInfo);
+		System.out.println("size:"+list2.size());
+		System.out.println("id:"+list2.get(0).getUid());
 	}
 	
 	

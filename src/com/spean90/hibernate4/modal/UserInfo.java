@@ -11,9 +11,13 @@ import javax.persistence.Table;
 import javax.persistence.Transient;
 import javax.transaction.TransactionScoped;
 
+import org.hibernate.annotations.Cache;
+import org.hibernate.annotations.CacheConcurrencyStrategy;
+
 
 @Entity
 @Table(name = "user_info")
+@Cache(usage=CacheConcurrencyStrategy.READ_WRITE)
 public class UserInfo implements Serializable {
 
 	private static final long serialVersionUID = 1L;

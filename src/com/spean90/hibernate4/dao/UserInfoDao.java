@@ -54,7 +54,7 @@ public class UserInfoDao {
 		Session session = UserInfoDao.getSessionFactory().openSession();
 		Criteria criteria = session.createCriteria(UserInfo.class);
 		criteria.add(Restrictions.gt("uid", 0)).addOrder(Order.asc("uid")).setFirstResult(0).setMaxResults(10);
-		
+		criteria.setCacheable(true);
 		list = criteria.list();
 		return list;
 	}

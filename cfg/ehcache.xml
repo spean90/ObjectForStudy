@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ehcache>
+   	<diskStore path="ehcache"/>
+  
+  	<defaultCache
+      maxElementsInMemory="10"
+      eternal="false"
+      timeToIdleSeconds="3600"
+      timeToLiveSeconds="18000"
+      overflowToDisk="false"
+      memoryStoreEvictionPolicy="LFU"/>
+      
+	<!-- <cache name="com.spean90.hibernate4.modal.UserInfo" 
+        maxElementsInMemory="1" 
+        eternal="true"
+        overflowToDisk="true" 
+        diskPersistent="true" 
+        memoryStoreEvictionPolicy="LFU" >
+    </cache> -->
+  
+   
+</ehcache>

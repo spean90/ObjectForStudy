@@ -21,7 +21,7 @@ import org.apache.poi.ss.usermodel.Workbook;
 public class ExcelUtil {
 
 	
-	public static void createExcelByList(List<Object> dataList,String fileName,Map<String, String> headMap) throws Exception {
+	public static void createExcelByList(List<Object> dataList,String fileName,Map<String, String> headMap,String path) throws Exception {
 		List<String> values = new ArrayList<String>();
 		List<String> keys = new ArrayList<String>();
 		if(headMap!=null){
@@ -46,7 +46,7 @@ public class ExcelUtil {
 //		style.setFillForegroundColor(IndexedColors.GREEN.getIndex());
 //	    style.setFillPattern(CellStyle.SOLID_FOREGROUND);
 		//创建sheet 一个excel有多个sheet
-		Sheet sheet = workbook.createSheet("考勤");
+		Sheet sheet = workbook.createSheet("sheet1");
 		
 		//根据列名来设置列的宽度
 		for (int i = 0; i < keys.size(); i++) {
@@ -64,10 +64,7 @@ public class ExcelUtil {
 			cell.setCellStyle(style);
 			cell.setCellValue(values.get(i));
 		}
-		
-		
 		//填充数据
-		
 		if (null!=dataList) {
 			for (int i = 0; i < dataList.size(); i++) {
 				row = sheet.createRow((int) i + 1);
@@ -78,8 +75,6 @@ public class ExcelUtil {
 				}
 			}
 		}
-		
-		String path = "cfg/poi";
 		File file = new File(path);
 		if (!file.exists()) {
 			file.createNewFile();
