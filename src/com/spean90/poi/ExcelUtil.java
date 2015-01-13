@@ -20,7 +20,17 @@ import org.apache.poi.ss.usermodel.Workbook;
 
 public class ExcelUtil {
 
-	
+	/**
+	 * 根据list创建xls
+	* @author Huangsp
+	* @date 2015年1月12日 
+	*
+	* @param dataList
+	* @param fileName
+	* @param headMap
+	* @param path
+	* @throws Exception
+	 */
 	public static void createExcelByList(List<Object> dataList,String fileName,Map<String, String> headMap,String path) throws Exception {
 		List<String> values = new ArrayList<String>();
 		List<String> keys = new ArrayList<String>();
