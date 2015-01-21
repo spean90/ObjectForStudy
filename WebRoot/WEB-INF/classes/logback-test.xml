@@ -51,6 +51,7 @@
     <logger name="org.hibernate.engine.QueryParameters" level="DEBUG" />  
     <logger name="org.hibernate.engine.query.HQLQueryPlan" level="DEBUG" /> 
     
+    <logger name="org.apache.cxf" level="INFO" />
     
 	<root level="DEBUG">
 		<appender-ref ref="STDOUT" />
