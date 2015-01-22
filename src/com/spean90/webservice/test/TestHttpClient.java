@@ -46,7 +46,6 @@ public class TestHttpClient {
 	while((s=reader.readLine())!=null) {
 		System.out.println(s);
 	}
-	
 	}
 }
 	
