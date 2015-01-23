@@ -12,7 +12,7 @@ public class TestMyServiceClient {
 	public static void main(String[] args) {
 		try {
 			//创建访问wsdl服务地址的URL
-			URL url = new URL("http://localhost:8888/myws?wsdl");
+			URL url = new URL("http://localhost:8080/myws?wsdl");
 			//通过QName指明服务的具体信息
             QName sName = new QName("http://impl.service.webservice.spean90.com/", "MyServiceImplService");
             //创建服务
