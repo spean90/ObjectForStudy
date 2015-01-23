@@ -1,5 +1,5 @@
 
-package cn.com.webxml;
+package cn.com.webxml.weather;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -17,7 +17,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="getDatabaseInfoResult" type="{http://WebXml.com.cn/}ArrayOfString" minOccurs="0"/>
+ *         &lt;element name="theRegionCode" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -28,35 +28,35 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "getDatabaseInfoResult"
+    "theRegionCode"
 })
-@XmlRootElement(name = "getDatabaseInfoResponse")
-public class GetDatabaseInfoResponse {
+@XmlRootElement(name = "getSupportCityString")
+public class GetSupportCityString {
 
-    protected ArrayOfString getDatabaseInfoResult;
+    protected String theRegionCode;
 
     /**
-     * Gets the value of the getDatabaseInfoResult property.
+     * Gets the value of the theRegionCode property.
      * 
      * @return
      *     possible object is
-     *     {@link ArrayOfString }
+     *     {@link String }
      *     
      */
-    public ArrayOfString getGetDatabaseInfoResult() {
-        return getDatabaseInfoResult;
+    public String getTheRegionCode() {
+        return theRegionCode;
     }
 
     /**
-     * Sets the value of the getDatabaseInfoResult property.
+     * Sets the value of the theRegionCode property.
      * 
      * @param value
      *     allowed object is
-     *     {@link ArrayOfString }
+     *     {@link String }
      *     
      */
-    public void setGetDatabaseInfoResult(ArrayOfString value) {
-        this.getDatabaseInfoResult = value;
+    public void setTheRegionCode(String value) {
+        this.theRegionCode = value;
     }
 
 }

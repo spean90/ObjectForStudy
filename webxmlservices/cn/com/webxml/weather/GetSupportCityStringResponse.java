@@ -1,5 +1,5 @@
 
-package cn.com.webxml;
+package cn.com.webxml.weather;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -17,7 +17,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="getMobileCodeInfoResult" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="getSupportCityStringResult" type="{http://WebXml.com.cn/}ArrayOfString" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -28,35 +28,35 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "getMobileCodeInfoResult"
+    "getSupportCityStringResult"
 })
-@XmlRootElement(name = "getMobileCodeInfoResponse")
-public class GetMobileCodeInfoResponse {
+@XmlRootElement(name = "getSupportCityStringResponse")
+public class GetSupportCityStringResponse {
 
-    protected String getMobileCodeInfoResult;
+    protected ArrayOfString getSupportCityStringResult;
 
     /**
-     * Gets the value of the getMobileCodeInfoResult property.
+     * Gets the value of the getSupportCityStringResult property.
      * 
      * @return
      *     possible object is
-     *     {@link String }
+     *     {@link ArrayOfString }
      *     
      */
-    public String getGetMobileCodeInfoResult() {
-        return getMobileCodeInfoResult;
+    public ArrayOfString getGetSupportCityStringResult() {
+        return getSupportCityStringResult;
     }
 
     /**
-     * Sets the value of the getMobileCodeInfoResult property.
+     * Sets the value of the getSupportCityStringResult property.
      * 
      * @param value
      *     allowed object is
-     *     {@link String }
+     *     {@link ArrayOfString }
      *     
      */
-    public void setGetMobileCodeInfoResult(String value) {
-        this.getMobileCodeInfoResult = value;
+    public void setGetSupportCityStringResult(ArrayOfString value) {
+        this.getSupportCityStringResult = value;
     }
 
 }

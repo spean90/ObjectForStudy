@@ -1,7 +1,7 @@
-package cn.com.webxml.test;
+package cn.com.webxml.mobile.test;
 
-import cn.com.webxml.MobileCodeWS;
-import cn.com.webxml.MobileCodeWSSoap;
+import cn.com.webxml.mobile.MobileCodeWS;
+import cn.com.webxml.mobile.MobileCodeWSSoap;
 
 public class TestMobile {
 

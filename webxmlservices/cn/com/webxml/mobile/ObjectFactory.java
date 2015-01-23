@@ -1,5 +1,5 @@
 
-package cn.com.webxml;
+package cn.com.webxml.mobile;
 
 import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlElementDecl;

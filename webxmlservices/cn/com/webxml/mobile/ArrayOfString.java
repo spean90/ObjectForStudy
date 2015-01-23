@@ -1,5 +1,5 @@
 
-package cn.com.webxml;
+package cn.com.webxml.mobile;
 
 import java.util.ArrayList;
 import java.util.List;

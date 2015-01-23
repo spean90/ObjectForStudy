@@ -1,5 +1,5 @@
 
-package cn.com.webxml;
+package cn.com.webxml.mobile;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
