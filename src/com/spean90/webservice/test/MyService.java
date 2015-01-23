@@ -12,5 +12,6 @@ public class MyService {
 		String address2 = "http://localhost:8888/myws2";
 		Endpoint.publish(address, new MyServiceImpl());
 		Endpoint.publish(address2, new MyService2Impl());
+		System.out.println("服务已启动");
 	}
 }
