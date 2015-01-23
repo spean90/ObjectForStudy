@@ -14,6 +14,8 @@ import org.apache.http.NameValuePair;
 import org.apache.http.StatusLine;
 import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.entity.UrlEncodedFormEntity;
+import org.apache.http.client.fluent.Form;
+import org.apache.http.client.fluent.Request;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
@@ -25,9 +27,37 @@ public class HttpPostTest {
 
 	public static void main(String[] args) {
 		HttpPostTest httpPostTest = new HttpPostTest();
-		httpPostTest.httpSimplePostTest();
+		httpPostTest.httFluentPostTest();
+	}
+	/**
+	 * httpclient提供的一种流利的访问方法、使用更简单；
+	* @author Huangsp
+	* @date 2015年1月23日 
+	*
+	 */
+	public void httFluentPostTest() {
+		try {
+			String result = Request.Post("http://webservice.webxml.com.cn/WebServices/MobileCodeWS.asmx/getMobileCodeInfo")
+			.addHeader("ContentType", "application/x-www-form-urlencoded;charset=utf-8")
+			.bodyForm(Form.form().add("mobileCode", "13850857602").add("userID", "").build())
+			.execute().returnContent().asString();
+			
+			System.out.println(result);
+		} catch (ClientProtocolException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
 	
+	
+	
+	/**
+	 * 简单的post请求
+	* @author Huangsp
+	* @date 2015年1月23日 
+	*
+	 */
 	public void httpSimplePostTest() {
 		List<NameValuePair> params = new ArrayList<NameValuePair>();
 		params.add(new BasicNameValuePair("mobileCode", "13850857602"));

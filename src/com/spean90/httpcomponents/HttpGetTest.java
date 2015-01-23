@@ -10,7 +10,11 @@ import org.apache.http.HttpResponse;
 import org.apache.http.StatusLine;
 import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.HttpClient;
+import org.apache.http.client.config.RequestConfig;
+import org.apache.http.client.config.RequestConfig.Builder;
+import org.apache.http.client.fluent.Request;
 import org.apache.http.client.methods.HttpGet;
+import org.apache.http.impl.client.HttpClientBuilder;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.util.EntityUtils;
 
@@ -18,9 +22,23 @@ public class HttpGetTest {
 
 	public static void main(String[] args) {
 		HttpGetTest test = new HttpGetTest();
-		test.httpSimpleGetTest();
+		test.httpFluentGetTest();
 		
 	}
+	public void httpFluentGetTest()	 {
+		try {
+			String s = Request.Get("http://webservice.webxml.com.cn/WebServices/WeatherWS.asmx/getRegionProvince?")
+			.connectTimeout(1000)
+			.socketTimeout(1000)
+			.execute().returnContent().asString();
+			System.out.println(s);
+		} catch (ClientProtocolException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+	
 	/**
 	 * 基本http get
 	* @author Huangsp
@@ -28,9 +46,21 @@ public class HttpGetTest {
 	*
 	 */
 	public void httpSimpleGetTest() {
-		HttpClient httpClient = HttpClients.createDefault();
+		
 		String url = "http://webservice.webxml.com.cn/WebServices/WeatherWS.asmx/getRegionProvince?";
 		HttpGet httpGet = new HttpGet(url);
+		Builder builder = RequestConfig.custom()
+			    .setSocketTimeout(1000)
+			    .setConnectTimeout(3000);
+		RequestConfig config = builder.build();
+		//指点该httpget的cofig;也可以通过下面指点client的config来实现；
+		//httpGet.setConfig(config);
+		
+		//根据builder创建制定的client;
+		HttpClientBuilder builder2 = HttpClients.custom().setDefaultRequestConfig(config);
+		HttpClient httpClient = builder2.build();
+		//创建默认的httpclient;
+		//HttpClient httpClient = HttpClients.createDefault();
 		try {
 			HttpResponse httpResponse = httpClient.execute(httpGet);
 			printResponse(httpResponse);
