@@ -11,7 +11,7 @@ public class TestWeatherClient {
 	public static void main(String[] args) {
 		WeatherWS weatherWS = new WeatherWS();
 		WeatherWSSoap weatherWSSoap = weatherWS.getWeatherWSSoap();
-		ArrayOfString arrayOfString = weatherWSSoap.getWeather("建宁", null);
+		ArrayOfString arrayOfString = weatherWSSoap.getWeather("福州", null);
 		List<String>list = arrayOfString.getString();
 		for (String string : list) {
 			System.out.println(string);
