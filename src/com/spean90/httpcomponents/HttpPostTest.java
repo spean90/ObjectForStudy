@@ -37,11 +37,16 @@ public class HttpPostTest {
 	 */
 	public void httFluentPostTest() {
 		try {
-			String result = Request.Post("http://webservice.webxml.com.cn/WebServices/MobileCodeWS.asmx/getMobileCodeInfo")
-			.addHeader("ContentType", "application/x-www-form-urlencoded;charset=utf-8")
-			.bodyForm(Form.form().add("mobileCode", "13850857602").add("userID", "").build())
-			.execute().returnContent().asString();
+			List<NameValuePair> params = new ArrayList<NameValuePair>();
+			params.add(new BasicNameValuePair("mobileCode", "13850857602"));
+			params.add(new BasicNameValuePair("userID", ""));
+			UrlEncodedFormEntity entity = new UrlEncodedFormEntity(params, Consts.UTF_8);
+			entity.setContentType("application/x-www-form-urlencoded;charset=utf-8");
 			
+			String result = Request.Post("http://webservice.webxml.com.cn/WebServices/MobileCodeWS.asmx/getMobileCodeInfo")
+			//.bodyForm(Form.form().add("mobileCode", "13850857602").add("userID", "").build())
+					.body(entity)     //这样可以指定contentType;
+			.execute().returnContent().asString();
 			System.out.println(result);
 		} catch (ClientProtocolException e) {
 			e.printStackTrace();
