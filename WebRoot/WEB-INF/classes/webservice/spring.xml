@@ -12,7 +12,12 @@
     <import resource="classpath:META-INF/cxf/cxf.xml"/>
     <import resource="classpath:META-INF/cxf/cxf-servlet.xml"/>
 	
-    <jaxws:endpoint id="myServiceImpl2" implementor="com.spean90.webservice.service.impl.MyService2Impl" address="/myws2"/>
+    <jaxws:endpoint id="myServiceImpl2" implementor="com.spean90.webservice.service.impl.MyService2Impl" address="/myws2">
+    	<jaxws:inInterceptors>
+    		<bean class="com.spean90.webservice.test.MyInterceptor"></bean>
+    	</jaxws:inInterceptors>
+    
+    </jaxws:endpoint>
     
      <bean id="userServiceImpl" class="com.spean90.webservice.rest.service.impl.UserServiceImpl" />  
     <jaxrs:server id="userWS" address="/user">  

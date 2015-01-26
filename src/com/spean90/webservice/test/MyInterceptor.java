@@ -13,6 +13,7 @@ public class MyInterceptor extends AbstractPhaseInterceptor<SoapMessage> {
 
 	public MyInterceptor() {
 		super(Phase.PRE_PROTOCOL);
+		System.out.println("MyInterceptor().....done....");
 	}
 
 	@Override
