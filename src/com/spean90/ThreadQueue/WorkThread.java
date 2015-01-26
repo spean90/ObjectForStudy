@@ -1,4 +1,4 @@
-package ThreadQueue;
+package com.spean90.ThreadQueue;
 
 import java.util.LinkedList;
 import java.util.Queue;

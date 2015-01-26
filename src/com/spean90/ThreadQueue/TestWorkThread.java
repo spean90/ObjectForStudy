@@ -1,4 +1,4 @@
-package ThreadQueue;
+package com.spean90.ThreadQueue;
 
 import java.io.BufferedReader;
 import java.io.IOException;
