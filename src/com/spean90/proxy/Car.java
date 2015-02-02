@@ -1,5 +1,6 @@
 package com.spean90.proxy;
 
+
 public class Car implements Moveable {
 
 	@Override
