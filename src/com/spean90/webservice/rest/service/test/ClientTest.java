@@ -7,6 +7,7 @@ import org.apache.http.client.fluent.Request;
 import org.apache.http.entity.StringEntity;
 import org.codehaus.jettison.json.JSONException;
 import org.codehaus.jettison.json.JSONObject;
+import org.springframework.web.client.RestTemplate;
 
 public class ClientTest {
 
