@@ -2,9 +2,7 @@ package com.spean90.proxy;
 
 import java.lang.reflect.Method;
 
-import org.springframework.cglib.proxy.Enhancer;
-import org.springframework.cglib.proxy.MethodInterceptor;
-import org.springframework.cglib.proxy.MethodProxy;
+import org.hibernate.bytecode.enhance.spi.Enhancer;
 
 public class CglibProxy implements MethodInterceptor {
 
